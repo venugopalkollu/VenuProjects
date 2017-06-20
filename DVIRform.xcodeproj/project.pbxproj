@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0282A9A1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0282A951EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift */; };
+		E0282A9B1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A961EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib */; };
+		E0282A9C1EEBC1E8007CF1AF /* TruckDefectsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0282A971EEBC1E8007CF1AF /* TruckDefectsTableView.swift */; };
+		E0282A9D1EEBC1E8007CF1AF /* TruckDefectsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A981EEBC1E8007CF1AF /* TruckDefectsTableView.xib */; };
+		E0282A9E1EEBC1E8007CF1AF /* View1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A991EEBC1E8007CF1AF /* View1.xib */; };
+		F416A0631EEEBE39009A09D1 /* TrailerDefectsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416A0621EEEBE39009A09D1 /* TrailerDefectsTableView.swift */; };
+		F416A0651EEEBE7E009A09D1 /* TrailerDefectsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F416A0641EEEBE7E009A09D1 /* TrailerDefectsTableView.xib */; };
+		F416A0681EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */; };
+		F416A0691EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */; };
+		F43ACAC41EDC30CE00F96397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAC31EDC30CE00F96397 /* AppDelegate.swift */; };
+		F43ACAC61EDC30CE00F96397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAC51EDC30CE00F96397 /* ViewController.swift */; };
+		F43ACAC91EDC30CE00F96397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43ACAC71EDC30CE00F96397 /* Main.storyboard */; };
+		F43ACACC1EDC30CE00F96397 /* DVIRform.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F43ACACA1EDC30CE00F96397 /* DVIRform.xcdatamodeld */; };
+		F43ACACE1EDC30CE00F96397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43ACACD1EDC30CE00F96397 /* Assets.xcassets */; };
+		F43ACAD11EDC30CE00F96397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43ACACF1EDC30CE00F96397 /* LaunchScreen.storyboard */; };
+		F43ACADC1EDC30CE00F96397 /* DVIRformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACADB1EDC30CE00F96397 /* DVIRformTests.swift */; };
+		F43ACAE71EDC30CE00F96397 /* DVIRformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAE61EDC30CE00F96397 /* DVIRformUITests.swift */; };
+		F43ACAFD1EDCA89800F96397 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAFC1EDCA89800F96397 /* View1.swift */; };
+		F43ACB011EDCA94600F96397 /* View2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACB001EDCA94600F96397 /* View2.swift */; };
+		F43ACB031EDCA95800F96397 /* View2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43ACB021EDCA95800F96397 /* View2.xib */; };
+		F43ACB051EDCA98900F96397 /* View3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACB041EDCA98900F96397 /* View3.swift */; };
+		F43ACB071EDCA99800F96397 /* View3.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43ACB061EDCA99800F96397 /* View3.xib */; };
+		F43DA3131EF0042800167575 /* checkbox-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = F43DA3121EF0042800167575 /* checkbox-unchecked.png */; };
+		F43DA3151EF0043200167575 /* checkBox-Checked.png in Resources */ = {isa = PBXBuildFile; fileRef = F43DA3141EF0043200167575 /* checkBox-Checked.png */; };
+		F43DA3171EF00EB000167575 /* YPDrawSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DA3161EF00EB000167575 /* YPDrawSignatureView.swift */; };
+		F44A77E11EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77D71EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift */; };
+		F44A77E21EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77D81EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift */; };
+		F44A77E31EF7A70D00046915 /* Dvir+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77D91EF7A70D00046915 /* Dvir+CoreDataClass.swift */; };
+		F44A77E41EF7A70D00046915 /* Dvir+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77DA1EF7A70D00046915 /* Dvir+CoreDataProperties.swift */; };
+		F44A77E51EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77DB1EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataClass.swift */; };
+		F44A77E61EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77DC1EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataProperties.swift */; };
+		F44A77E71EF7A70D00046915 /* TrailerDefect+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77DD1EF7A70D00046915 /* TrailerDefect+CoreDataClass.swift */; };
+		F44A77E81EF7A70D00046915 /* TrailerDefect+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77DE1EF7A70D00046915 /* TrailerDefect+CoreDataProperties.swift */; };
+		F44A77E91EF7A70D00046915 /* TruckDefect+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77DF1EF7A70D00046915 /* TruckDefect+CoreDataClass.swift */; };
+		F44A77EA1EF7A70D00046915 /* TruckDefect+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77E01EF7A70D00046915 /* TruckDefect+CoreDataProperties.swift */; };
+		F44A77ED1EF847E700046915 /* TruckDefectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77EB1EF847E700046915 /* TruckDefectTableViewController.swift */; };
+		F44A77EE1EF847E700046915 /* TruckDefectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44A77EC1EF847E700046915 /* TruckDefectTableViewController.xib */; };
+		F44A77F11EF84E6900046915 /* TrailerDefectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77EF1EF84E6900046915 /* TrailerDefectTableViewController.swift */; };
+		F44A77F21EF84E6900046915 /* TrailerDefectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44A77F01EF84E6900046915 /* TrailerDefectTableViewController.xib */; };
+		F4C375271EDD77700007BB45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C375261EDD77700007BB45 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F43ACAD81EDC30CE00F96397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F43ACAB81EDC30CE00F96397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F43ACABF1EDC30CE00F96397;
+			remoteInfo = DVIRform;
+		};
+		F43ACAE31EDC30CE00F96397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F43ACAB81EDC30CE00F96397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F43ACABF1EDC30CE00F96397;
+			remoteInfo = DVIRform;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E0282A951EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTruckDefectsTableViewCell.swift; sourceTree = "<group>"; };
+		E0282A961EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTruckDefectsTableViewCell.xib; sourceTree = "<group>"; };
+		E0282A971EEBC1E8007CF1AF /* TruckDefectsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckDefectsTableView.swift; sourceTree = "<group>"; };
+		E0282A981EEBC1E8007CF1AF /* TruckDefectsTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TruckDefectsTableView.xib; sourceTree = "<group>"; };
+		E0282A991EEBC1E8007CF1AF /* View1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View1.xib; sourceTree = "<group>"; };
+		F416A0621EEEBE39009A09D1 /* TrailerDefectsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerDefectsTableView.swift; sourceTree = "<group>"; };
+		F416A0641EEEBE7E009A09D1 /* TrailerDefectsTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrailerDefectsTableView.xib; sourceTree = "<group>"; };
+		F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTrailerDefectsTableViewCell.swift; sourceTree = "<group>"; };
+		F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTrailerDefectsTableViewCell.xib; sourceTree = "<group>"; };
+		F43ACAC01EDC30CE00F96397 /* DVIRform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVIRform.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43ACAC31EDC30CE00F96397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F43ACAC51EDC30CE00F96397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F43ACAC81EDC30CE00F96397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F43ACACB1EDC30CE00F96397 /* DVIRform.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DVIRform.xcdatamodel; sourceTree = "<group>"; };
+		F43ACACD1EDC30CE00F96397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F43ACAD01EDC30CE00F96397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F43ACAD21EDC30CE00F96397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43ACAD71EDC30CE00F96397 /* DVIRformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVIRformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43ACADB1EDC30CE00F96397 /* DVIRformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVIRformTests.swift; sourceTree = "<group>"; };
+		F43ACADD1EDC30CE00F96397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43ACAE21EDC30CE00F96397 /* DVIRformUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVIRformUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43ACAE61EDC30CE00F96397 /* DVIRformUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVIRformUITests.swift; sourceTree = "<group>"; };
+		F43ACAE81EDC30CE00F96397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43ACAFC1EDCA89800F96397 /* View1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
+		F43ACB001EDCA94600F96397 /* View2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View2.swift; sourceTree = "<group>"; };
+		F43ACB021EDCA95800F96397 /* View2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View2.xib; sourceTree = "<group>"; };
+		F43ACB041EDCA98900F96397 /* View3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View3.swift; sourceTree = "<group>"; };
+		F43ACB061EDCA99800F96397 /* View3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View3.xib; sourceTree = "<group>"; };
+		F43DA3121EF0042800167575 /* checkbox-unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-unchecked.png"; sourceTree = "<group>"; };
+		F43DA3141EF0043200167575 /* checkBox-Checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkBox-Checked.png"; sourceTree = "<group>"; };
+		F43DA3161EF00EB000167575 /* YPDrawSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPDrawSignatureView.swift; sourceTree = "<group>"; };
+		F44A77D71EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DvirTrailerDefectMapping+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F44A77D81EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DvirTrailerDefectMapping+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F44A77D91EF7A70D00046915 /* Dvir+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dvir+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F44A77DA1EF7A70D00046915 /* Dvir+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dvir+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F44A77DB1EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DvirTruckDefectMapping+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F44A77DC1EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DvirTruckDefectMapping+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F44A77DD1EF7A70D00046915 /* TrailerDefect+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TrailerDefect+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F44A77DE1EF7A70D00046915 /* TrailerDefect+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TrailerDefect+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F44A77DF1EF7A70D00046915 /* TruckDefect+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TruckDefect+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F44A77E01EF7A70D00046915 /* TruckDefect+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TruckDefect+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F44A77EB1EF847E700046915 /* TruckDefectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckDefectTableViewController.swift; sourceTree = "<group>"; };
+		F44A77EC1EF847E700046915 /* TruckDefectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TruckDefectTableViewController.xib; sourceTree = "<group>"; };
+		F44A77EF1EF84E6900046915 /* TrailerDefectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerDefectTableViewController.swift; sourceTree = "<group>"; };
+		F44A77F01EF84E6900046915 /* TrailerDefectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrailerDefectTableViewController.xib; sourceTree = "<group>"; };
+		F4C375261EDD77700007BB45 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F43ACABD1EDC30CE00F96397 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C375271EDD77700007BB45 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43ACAD41EDC30CE00F96397 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43ACADF1EDC30CE00F96397 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F43ACAB71EDC30CE00F96397 = {
+			isa = PBXGroup;
+			children = (
+				F44A77D71EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift */,
+				F44A77D81EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift */,
+				F44A77D91EF7A70D00046915 /* Dvir+CoreDataClass.swift */,
+				F44A77DA1EF7A70D00046915 /* Dvir+CoreDataProperties.swift */,
+				F44A77DB1EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataClass.swift */,
+				F44A77DC1EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataProperties.swift */,
+				F44A77DD1EF7A70D00046915 /* TrailerDefect+CoreDataClass.swift */,
+				F44A77DE1EF7A70D00046915 /* TrailerDefect+CoreDataProperties.swift */,
+				F44A77DF1EF7A70D00046915 /* TruckDefect+CoreDataClass.swift */,
+				F44A77E01EF7A70D00046915 /* TruckDefect+CoreDataProperties.swift */,
+				F43ACAC21EDC30CE00F96397 /* DVIRform */,
+				F43ACADA1EDC30CE00F96397 /* DVIRformTests */,
+				F43ACAE51EDC30CE00F96397 /* DVIRformUITests */,
+				F43ACAC11EDC30CE00F96397 /* Products */,
+				F4C375251EDD77700007BB45 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F43ACAC11EDC30CE00F96397 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F43ACAC01EDC30CE00F96397 /* DVIRform.app */,
+				F43ACAD71EDC30CE00F96397 /* DVIRformTests.xctest */,
+				F43ACAE21EDC30CE00F96397 /* DVIRformUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F43ACAC21EDC30CE00F96397 /* DVIRform */ = {
+			isa = PBXGroup;
+			children = (
+				F43ACAC31EDC30CE00F96397 /* AppDelegate.swift */,
+				F43ACAC51EDC30CE00F96397 /* ViewController.swift */,
+				F43ACAFC1EDCA89800F96397 /* View1.swift */,
+				E0282A991EEBC1E8007CF1AF /* View1.xib */,
+				F43ACB001EDCA94600F96397 /* View2.swift */,
+				F43ACB021EDCA95800F96397 /* View2.xib */,
+				E0282A951EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift */,
+				E0282A961EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib */,
+				E0282A971EEBC1E8007CF1AF /* TruckDefectsTableView.swift */,
+				E0282A981EEBC1E8007CF1AF /* TruckDefectsTableView.xib */,
+				F44A77EB1EF847E700046915 /* TruckDefectTableViewController.swift */,
+				F44A77EC1EF847E700046915 /* TruckDefectTableViewController.xib */,
+				F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */,
+				F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */,
+				F416A0621EEEBE39009A09D1 /* TrailerDefectsTableView.swift */,
+				F416A0641EEEBE7E009A09D1 /* TrailerDefectsTableView.xib */,
+				F44A77EF1EF84E6900046915 /* TrailerDefectTableViewController.swift */,
+				F44A77F01EF84E6900046915 /* TrailerDefectTableViewController.xib */,
+				F43ACB041EDCA98900F96397 /* View3.swift */,
+				F43DA3161EF00EB000167575 /* YPDrawSignatureView.swift */,
+				F43ACB061EDCA99800F96397 /* View3.xib */,
+				F43ACAC71EDC30CE00F96397 /* Main.storyboard */,
+				F43ACACD1EDC30CE00F96397 /* Assets.xcassets */,
+				F43ACACF1EDC30CE00F96397 /* LaunchScreen.storyboard */,
+				F43ACAD21EDC30CE00F96397 /* Info.plist */,
+				F43ACACA1EDC30CE00F96397 /* DVIRform.xcdatamodeld */,
+				F43DA3121EF0042800167575 /* checkbox-unchecked.png */,
+				F43DA3141EF0043200167575 /* checkBox-Checked.png */,
+			);
+			path = DVIRform;
+			sourceTree = "<group>";
+		};
+		F43ACADA1EDC30CE00F96397 /* DVIRformTests */ = {
+			isa = PBXGroup;
+			children = (
+				F43ACADB1EDC30CE00F96397 /* DVIRformTests.swift */,
+				F43ACADD1EDC30CE00F96397 /* Info.plist */,
+			);
+			path = DVIRformTests;
+			sourceTree = "<group>";
+		};
+		F43ACAE51EDC30CE00F96397 /* DVIRformUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F43ACAE61EDC30CE00F96397 /* DVIRformUITests.swift */,
+				F43ACAE81EDC30CE00F96397 /* Info.plist */,
+			);
+			path = DVIRformUITests;
+			sourceTree = "<group>";
+		};
+		F4C375251EDD77700007BB45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4C375261EDD77700007BB45 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F43ACABF1EDC30CE00F96397 /* DVIRform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43ACAEB1EDC30CE00F96397 /* Build configuration list for PBXNativeTarget "DVIRform" */;
+			buildPhases = (
+				F43ACABC1EDC30CE00F96397 /* Sources */,
+				F43ACABD1EDC30CE00F96397 /* Frameworks */,
+				F43ACABE1EDC30CE00F96397 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DVIRform;
+			productName = DVIRform;
+			productReference = F43ACAC01EDC30CE00F96397 /* DVIRform.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F43ACAD61EDC30CE00F96397 /* DVIRformTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43ACAEE1EDC30CE00F96397 /* Build configuration list for PBXNativeTarget "DVIRformTests" */;
+			buildPhases = (
+				F43ACAD31EDC30CE00F96397 /* Sources */,
+				F43ACAD41EDC30CE00F96397 /* Frameworks */,
+				F43ACAD51EDC30CE00F96397 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F43ACAD91EDC30CE00F96397 /* PBXTargetDependency */,
+			);
+			name = DVIRformTests;
+			productName = DVIRformTests;
+			productReference = F43ACAD71EDC30CE00F96397 /* DVIRformTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F43ACAE11EDC30CE00F96397 /* DVIRformUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43ACAF11EDC30CE00F96397 /* Build configuration list for PBXNativeTarget "DVIRformUITests" */;
+			buildPhases = (
+				F43ACADE1EDC30CE00F96397 /* Sources */,
+				F43ACADF1EDC30CE00F96397 /* Frameworks */,
+				F43ACAE01EDC30CE00F96397 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F43ACAE41EDC30CE00F96397 /* PBXTargetDependency */,
+			);
+			name = DVIRformUITests;
+			productName = DVIRformUITests;
+			productReference = F43ACAE21EDC30CE00F96397 /* DVIRformUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F43ACAB81EDC30CE00F96397 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Lirctek;
+				TargetAttributes = {
+					F43ACABF1EDC30CE00F96397 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					F43ACAD61EDC30CE00F96397 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F43ACABF1EDC30CE00F96397;
+					};
+					F43ACAE11EDC30CE00F96397 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F43ACABF1EDC30CE00F96397;
+					};
+				};
+			};
+			buildConfigurationList = F43ACABB1EDC30CE00F96397 /* Build configuration list for PBXProject "DVIRform" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F43ACAB71EDC30CE00F96397;
+			productRefGroup = F43ACAC11EDC30CE00F96397 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F43ACABF1EDC30CE00F96397 /* DVIRform */,
+				F43ACAD61EDC30CE00F96397 /* DVIRformTests */,
+				F43ACAE11EDC30CE00F96397 /* DVIRformUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F43ACABE1EDC30CE00F96397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44A77F21EF84E6900046915 /* TrailerDefectTableViewController.xib in Resources */,
+				E0282A9D1EEBC1E8007CF1AF /* TruckDefectsTableView.xib in Resources */,
+				F43ACAD11EDC30CE00F96397 /* LaunchScreen.storyboard in Resources */,
+				F416A0651EEEBE7E009A09D1 /* TrailerDefectsTableView.xib in Resources */,
+				F43ACACE1EDC30CE00F96397 /* Assets.xcassets in Resources */,
+				F43ACB071EDCA99800F96397 /* View3.xib in Resources */,
+				F44A77EE1EF847E700046915 /* TruckDefectTableViewController.xib in Resources */,
+				F43DA3131EF0042800167575 /* checkbox-unchecked.png in Resources */,
+				F43ACB031EDCA95800F96397 /* View2.xib in Resources */,
+				F43ACAC91EDC30CE00F96397 /* Main.storyboard in Resources */,
+				E0282A9E1EEBC1E8007CF1AF /* View1.xib in Resources */,
+				E0282A9B1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib in Resources */,
+				F43DA3151EF0043200167575 /* checkBox-Checked.png in Resources */,
+				F416A0691EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43ACAD51EDC30CE00F96397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43ACAE01EDC30CE00F96397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F43ACABC1EDC30CE00F96397 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0282A9C1EEBC1E8007CF1AF /* TruckDefectsTableView.swift in Sources */,
+				F43ACB011EDCA94600F96397 /* View2.swift in Sources */,
+				F44A77ED1EF847E700046915 /* TruckDefectTableViewController.swift in Sources */,
+				F44A77E11EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift in Sources */,
+				F44A77EA1EF7A70D00046915 /* TruckDefect+CoreDataProperties.swift in Sources */,
+				F43ACAC61EDC30CE00F96397 /* ViewController.swift in Sources */,
+				F44A77E31EF7A70D00046915 /* Dvir+CoreDataClass.swift in Sources */,
+				F43ACAC41EDC30CE00F96397 /* AppDelegate.swift in Sources */,
+				F44A77F11EF84E6900046915 /* TrailerDefectTableViewController.swift in Sources */,
+				F44A77E71EF7A70D00046915 /* TrailerDefect+CoreDataClass.swift in Sources */,
+				F43ACAFD1EDCA89800F96397 /* View1.swift in Sources */,
+				F43DA3171EF00EB000167575 /* YPDrawSignatureView.swift in Sources */,
+				F44A77E61EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataProperties.swift in Sources */,
+				F43ACB051EDCA98900F96397 /* View3.swift in Sources */,
+				F44A77E41EF7A70D00046915 /* Dvir+CoreDataProperties.swift in Sources */,
+				F44A77E81EF7A70D00046915 /* TrailerDefect+CoreDataProperties.swift in Sources */,
+				E0282A9A1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift in Sources */,
+				F44A77E91EF7A70D00046915 /* TruckDefect+CoreDataClass.swift in Sources */,
+				F44A77E21EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift in Sources */,
+				F416A0681EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift in Sources */,
+				F416A0631EEEBE39009A09D1 /* TrailerDefectsTableView.swift in Sources */,
+				F44A77E51EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataClass.swift in Sources */,
+				F43ACACC1EDC30CE00F96397 /* DVIRform.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43ACAD31EDC30CE00F96397 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43ACADC1EDC30CE00F96397 /* DVIRformTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43ACADE1EDC30CE00F96397 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43ACAE71EDC30CE00F96397 /* DVIRformUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F43ACAD91EDC30CE00F96397 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F43ACABF1EDC30CE00F96397 /* DVIRform */;
+			targetProxy = F43ACAD81EDC30CE00F96397 /* PBXContainerItemProxy */;
+		};
+		F43ACAE41EDC30CE00F96397 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F43ACABF1EDC30CE00F96397 /* DVIRform */;
+			targetProxy = F43ACAE31EDC30CE00F96397 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F43ACAC71EDC30CE00F96397 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43ACAC81EDC30CE00F96397 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F43ACACF1EDC30CE00F96397 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43ACAD01EDC30CE00F96397 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F43ACAE91EDC30CE00F96397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F43ACAEA1EDC30CE00F96397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F43ACAEC1EDC30CE00F96397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DVIRform/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lirtc.DVIRform;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F43ACAED1EDC30CE00F96397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DVIRform/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lirtc.DVIRform;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F43ACAEF1EDC30CE00F96397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DVIRformTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lirtc.DVIRformTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DVIRform.app/DVIRform";
+			};
+			name = Debug;
+		};
+		F43ACAF01EDC30CE00F96397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DVIRformTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lirtc.DVIRformTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DVIRform.app/DVIRform";
+			};
+			name = Release;
+		};
+		F43ACAF21EDC30CE00F96397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DVIRformUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lirtc.DVIRformUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DVIRform;
+			};
+			name = Debug;
+		};
+		F43ACAF31EDC30CE00F96397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DVIRformUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lirtc.DVIRformUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DVIRform;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F43ACABB1EDC30CE00F96397 /* Build configuration list for PBXProject "DVIRform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43ACAE91EDC30CE00F96397 /* Debug */,
+				F43ACAEA1EDC30CE00F96397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F43ACAEB1EDC30CE00F96397 /* Build configuration list for PBXNativeTarget "DVIRform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43ACAEC1EDC30CE00F96397 /* Debug */,
+				F43ACAED1EDC30CE00F96397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F43ACAEE1EDC30CE00F96397 /* Build configuration list for PBXNativeTarget "DVIRformTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43ACAEF1EDC30CE00F96397 /* Debug */,
+				F43ACAF01EDC30CE00F96397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F43ACAF11EDC30CE00F96397 /* Build configuration list for PBXNativeTarget "DVIRformUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43ACAF21EDC30CE00F96397 /* Debug */,
+				F43ACAF31EDC30CE00F96397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F43ACACA1EDC30CE00F96397 /* DVIRform.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F43ACACB1EDC30CE00F96397 /* DVIRform.xcdatamodel */,
+			);
+			currentVersion = F43ACACB1EDC30CE00F96397 /* DVIRform.xcdatamodel */;
+			path = DVIRform.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F43ACAB81EDC30CE00F96397 /* Project object */;
+}
