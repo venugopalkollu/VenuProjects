@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,8 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ief-8O-kQd">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ief-8O-kQd">
                                 <rect key="frame" x="163" y="110" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Vehicle">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,8 +32,9 @@
                                     <action selector="vehicleButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRp-EH-zcb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgN-tF-Z84">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgN-tF-Z84">
                                 <rect key="frame" x="290" y="110" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Signature">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,8 +42,9 @@
                                     <action selector="signatureButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8uc-iW-UIA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiC-l8-cO2">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiC-l8-cO2">
                                 <rect key="frame" x="26" y="110" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="General">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -50,23 +52,17 @@
                                     <action selector="generalButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yjx-XH-NB9"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2b-qY-rWB">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2b-qY-rWB">
                                 <rect key="frame" x="0.0" y="148" width="375" height="602"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Xa-2r-hi0">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Xa-2r-hi0">
                                         <rect key="frame" x="0.0" y="50" width="375" height="602"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="2Xa-2r-hi0" firstAttribute="leading" secondItem="D2b-qY-rWB" secondAttribute="leading" id="1ot-yR-DC8"/>
-                                    <constraint firstItem="2Xa-2r-hi0" firstAttribute="centerY" secondItem="D2b-qY-rWB" secondAttribute="centerY" id="A8H-5P-dfT"/>
-                                    <constraint firstAttribute="bottom" secondItem="2Xa-2r-hi0" secondAttribute="bottom" id="KDb-Hi-dgb"/>
-                                    <constraint firstItem="2Xa-2r-hi0" firstAttribute="top" secondItem="D2b-qY-rWB" secondAttribute="top" id="V9Y-To-tIl"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Xa-2r-hi0" secondAttribute="trailing" id="dKz-kP-UWl"/>
-                                    <constraint firstItem="2Xa-2r-hi0" firstAttribute="centerX" secondItem="D2b-qY-rWB" secondAttribute="centerX" id="sNY-7r-ERg"/>
-                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-FR-W8I">
                                 <rect key="frame" x="30" y="61" width="46" height="30"/>
@@ -94,18 +90,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20046795685279184" green="0.20046795685279184" blue="0.20046795685279184" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZgN-tF-Z84" secondAttribute="trailing" constant="3" id="4UL-0R-BQd"/>
-                            <constraint firstItem="aiC-l8-cO2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9.5" id="IBt-h0-QB3"/>
-                            <constraint firstItem="aiC-l8-cO2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="Ioe-YN-Nkd"/>
-                            <constraint firstItem="D2b-qY-rWB" firstAttribute="centerX" secondItem="ief-8O-kQd" secondAttribute="centerX" id="e5l-5P-aJ9"/>
-                            <constraint firstItem="aiC-l8-cO2" firstAttribute="baseline" secondItem="ZgN-tF-Z84" secondAttribute="baseline" id="eqa-XA-1bq"/>
-                            <constraint firstItem="ief-8O-kQd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fpC-8n-VyW"/>
-                            <constraint firstItem="D2b-qY-rWB" firstAttribute="top" secondItem="aiC-l8-cO2" secondAttribute="bottom" constant="8" symbolic="YES" id="gFx-YW-JkQ"/>
-                            <constraint firstItem="aiC-l8-cO2" firstAttribute="baseline" secondItem="ief-8O-kQd" secondAttribute="baseline" id="mxD-CW-aRM"/>
-                            <constraint firstItem="D2b-qY-rWB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nvl-zb-flp"/>
-                            <constraint firstItem="D2b-qY-rWB" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="qhz-To-Bsb"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mke-G7-joo"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

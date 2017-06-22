@@ -8,11 +8,14 @@
 
 import UIKit
 import CoreGraphics
-class View3: UIView, YPSignatureDelegate {
+class View3: UIView {
 
     class func instanceFromNib() -> UIView {
         return UINib(nibName: "View3", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! View3
     }
+    
+    var completionHandler:((_ slectedIndex:Int)->Void)?
+
 
     @IBOutlet weak var driverSignatureView: UIImageView!
     
@@ -23,30 +26,111 @@ class View3: UIView, YPSignatureDelegate {
     
     @IBAction func saveButtonClicked(_ sender: UIButton) {
         
-    }
-    func setDelegates(){
-       // self.driverSignatureView.delegate = self;
-      //  self.mechanicSignatureView.delegate = self;
+        self.completionHandler!(3)
         
     }
     
-
-        func didStart() {
-        print("Started Drawing")
+    
+    //Drawing Part
+    var lastPoint:CGPoint!
+    var isSwiping:Bool!
+    var red:CGFloat!
+    var green:CGFloat!
+    var blue:CGFloat!
+    
+    //MARK: Touch events
+    
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?){
+        isSwiping    = false
+        if let touch = touches.first{
+            lastPoint = touch.location(in: driverSignatureView)
+        }
     }
     
-    // didFinish() is called rigth after the last touch of a gesture is registered in the view.
-    // Can be used to enabe scrolling in a scroll view if it has previous been disabled.
-    func didFinish() {
-        print("Finished Drawing")
+    override func touchesMoved(_ touches: Set<UITouch>,
+                               with event: UIEvent?){
+        
+        isSwiping = true;
+        if let touch = touches.first{
+            let currentPoint = touch.location(in: driverSignatureView)
+            UIGraphicsBeginImageContext(self.driverSignatureView.frame.size)
+            self.driverSignatureView.image?.draw(in: CGRect(x: 0, y: 0, width: self.driverSignatureView.frame.size.width, height: self.driverSignatureView.frame.size.height))
+            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
+            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
+            UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
+//    UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.strokePath()
+            self.driverSignatureView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            lastPoint = currentPoint
+        }
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?){
+        if(!isSwiping) {
+            // This is a single touch, draw a point
+            UIGraphicsBeginImageContext(self.driverSignatureView.frame.size)
+            self.driverSignatureView.image?.draw(in: CGRect(x: 0, y: 0, width: self.driverSignatureView.frame.size.width, height: self.driverSignatureView.frame.size.height))
+            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
+            UIGraphicsGetCurrentContext()?.setLineWidth(9.0)
+            UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+            UIGraphicsGetCurrentContext()?.strokePath()
+            self.driverSignatureView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
     }
-    */
+    
+    
+/*    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?){
+        isSwiping    = false
+        if let touch = touches.first{
+            lastPoint = touch.location(in: mechanicSignatureView)
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>,
+                               with event: UIEvent?){
+        
+        isSwiping = true;
+        if let touch = touches.first{
+            let currentPoint = touch.location(in: mechanicSignatureView)
+            UIGraphicsBeginImageContext(self.mechanicSignatureView.frame.size)
+            self.mechanicSignatureView.image?.draw(in: CGRect(x: 0, y: 0, width: self.mechanicSignatureView.frame.size.width, height: self.mechanicSignatureView.frame.size.height))
+            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
+            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
+            UIGraphicsGetCurrentContext()?.setLineWidth(2.0)
+            //    UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.strokePath()
+            self.mechanicSignatureView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            lastPoint = currentPoint
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?){
+        if(!isSwiping) {
+            // This is a single touch, draw a point
+            UIGraphicsBeginImageContext(self.driverSignatureView.frame.size)
+            self.mechanicSignatureView.image?.draw(in: CGRect(x: 0, y: 0, width: self.mechanicSignatureView.frame.size.width, height: self.mechanicSignatureView.frame.size.height))
+            UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
+            UIGraphicsGetCurrentContext()?.setLineWidth(9.0)
+ //         UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+            UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
+            UIGraphicsGetCurrentContext()?.strokePath()
+            self.mechanicSignatureView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
+    }
+    
+*/
+    
 
+    
 }

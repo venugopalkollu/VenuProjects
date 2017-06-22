@@ -31,7 +31,6 @@
 		F43ACB071EDCA99800F96397 /* View3.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43ACB061EDCA99800F96397 /* View3.xib */; };
 		F43DA3131EF0042800167575 /* checkbox-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = F43DA3121EF0042800167575 /* checkbox-unchecked.png */; };
 		F43DA3151EF0043200167575 /* checkBox-Checked.png in Resources */ = {isa = PBXBuildFile; fileRef = F43DA3141EF0043200167575 /* checkBox-Checked.png */; };
-		F43DA3171EF00EB000167575 /* YPDrawSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43DA3161EF00EB000167575 /* YPDrawSignatureView.swift */; };
 		F44A77E11EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77D71EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift */; };
 		F44A77E21EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77D81EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift */; };
 		F44A77E31EF7A70D00046915 /* Dvir+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44A77D91EF7A70D00046915 /* Dvir+CoreDataClass.swift */; };
@@ -97,7 +96,6 @@
 		F43ACB061EDCA99800F96397 /* View3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View3.xib; sourceTree = "<group>"; };
 		F43DA3121EF0042800167575 /* checkbox-unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-unchecked.png"; sourceTree = "<group>"; };
 		F43DA3141EF0043200167575 /* checkBox-Checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkBox-Checked.png"; sourceTree = "<group>"; };
-		F43DA3161EF00EB000167575 /* YPDrawSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPDrawSignatureView.swift; sourceTree = "<group>"; };
 		F44A77D71EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DvirTrailerDefectMapping+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F44A77D81EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DvirTrailerDefectMapping+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F44A77D91EF7A70D00046915 /* Dvir+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dvir+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				F44A77EF1EF84E6900046915 /* TrailerDefectTableViewController.swift */,
 				F44A77F01EF84E6900046915 /* TrailerDefectTableViewController.xib */,
 				F43ACB041EDCA98900F96397 /* View3.swift */,
-				F43DA3161EF00EB000167575 /* YPDrawSignatureView.swift */,
 				F43ACB061EDCA99800F96397 /* View3.xib */,
 				F43ACAC71EDC30CE00F96397 /* Main.storyboard */,
 				F43ACACD1EDC30CE00F96397 /* Assets.xcassets */,
@@ -389,7 +386,6 @@
 				F44A77F11EF84E6900046915 /* TrailerDefectTableViewController.swift in Sources */,
 				F44A77E71EF7A70D00046915 /* TrailerDefect+CoreDataClass.swift in Sources */,
 				F43ACAFD1EDCA89800F96397 /* View1.swift in Sources */,
-				F43DA3171EF00EB000167575 /* YPDrawSignatureView.swift in Sources */,
 				F44A77E61EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataProperties.swift in Sources */,
 				F43ACB051EDCA98900F96397 /* View3.swift in Sources */,
 				F44A77E41EF7A70D00046915 /* Dvir+CoreDataProperties.swift in Sources */,

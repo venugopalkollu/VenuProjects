@@ -25,16 +25,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkK-zh-zJ0">
-                        <rect key="frame" x="8" y="11" width="30" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button" image="checkbox-unchecked.png">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="checkBoxButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="a7S-vB-XrR"/>
-                        </connections>
-                    </button>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Comments" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fnm-nO-QAT">
                         <rect key="frame" x="46" y="45" width="320" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,11 +40,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuU-Lt-M82">
+                        <rect key="frame" x="8" y="11" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button" image="checkbox-unchecked.png">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="checkBoxButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zsa-NI-41s"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="checkBoxButton" destination="HkK-zh-zJ0" id="esO-O3-r6a"/>
+                <outlet property="checkBoxButton" destination="AuU-Lt-M82" id="1uY-z6-VpJ"/>
                 <outlet property="lblComments" destination="VWJ-oz-SJK" id="uNK-VJ-qH5"/>
                 <outlet property="truckDefectLabel" destination="ybk-QL-wFd" id="dF1-P5-e8g"/>
                 <outlet property="txtComments" destination="Fnm-nO-QAT" id="6YO-Jg-TnY"/>

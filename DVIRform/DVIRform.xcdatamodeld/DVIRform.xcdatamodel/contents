@@ -33,7 +33,6 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="updatedFields" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedUserId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="trailerDefect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrailerDefect" inverseName="dvirTrailerDefectMapping" inverseEntity="TrailerDefect" syncable="YES"/>
     </entity>
     <entity name="DvirTruckDefectMapping" representedClassName="DvirTruckDefectMapping" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
@@ -48,7 +47,6 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="updatedFields" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedUserId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="truckDefect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TruckDefect" inverseName="dvirTruckDefectMapping" inverseEntity="TruckDefect" syncable="YES"/>
     </entity>
     <entity name="TrailerDefect" representedClassName="TrailerDefect" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -57,7 +55,6 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="updatedUserId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="dvirTrailerDefectMapping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DvirTrailerDefectMapping" inverseName="trailerDefect" inverseEntity="DvirTrailerDefectMapping" syncable="YES"/>
     </entity>
     <entity name="TruckDefect" representedClassName="TruckDefect" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -66,13 +63,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="updatedUserId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="dvirTruckDefectMapping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DvirTruckDefectMapping" inverseName="truckDefect" inverseEntity="DvirTruckDefectMapping" syncable="YES"/>
     </entity>
     <elements>
         <element name="Dvir" positionX="-387" positionY="-9" width="128" height="315"/>
-        <element name="DvirTrailerDefectMapping" positionX="-9" positionY="300" width="128" height="240"/>
-        <element name="DvirTruckDefectMapping" positionX="-200" positionY="273" width="128" height="240"/>
-        <element name="TrailerDefect" positionX="-38" positionY="-24" width="128" height="150"/>
-        <element name="TruckDefect" positionX="-234" positionY="-6" width="128" height="148"/>
+        <element name="DvirTrailerDefectMapping" positionX="-9" positionY="300" width="128" height="225"/>
+        <element name="DvirTruckDefectMapping" positionX="-200" positionY="273" width="128" height="225"/>
+        <element name="TrailerDefect" positionX="-38" positionY="-24" width="128" height="135"/>
+        <element name="TruckDefect" positionX="-234" positionY="-6" width="128" height="135"/>
     </elements>
 </model>

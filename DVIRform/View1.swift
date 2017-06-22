@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-//venu
+
 @objc protocol saveButtonClicked{
     
 }
@@ -39,8 +39,8 @@ class View1: UIView,UITextFieldDelegate {
     
     
     @IBAction func saveButtonClicked(_ sender: Any) {
-        self.completionHandler!(1)
-
+        
+ self.completionHandler!(1)
             }
     
     
