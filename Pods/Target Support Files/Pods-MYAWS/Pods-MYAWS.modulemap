@@ -1,0 +1,6 @@
+framework module Pods_MYAWS {
+  umbrella header "Pods-MYAWS-umbrella.h"
+
+  export *
+  module * { export * }
+}

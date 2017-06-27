@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		98E02DE18EC1E76538290E9A /* Pods_MYAWS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA969B1ACDF2FD8205290D0 /* Pods_MYAWS.framework */; };
+		E02486CD1EFD84E20003781C /* Darshan_receipt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E02486CC1EFD84E20003781C /* Darshan_receipt.pdf */; };
+		E02486D11EFE630A0003781C /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E02486D01EFE630A0003781C /* test.jpg */; };
+		E024DBC41EFD80F5001D1518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024DBC31EFD80F5001D1518 /* AppDelegate.swift */; };
+		E024DBC61EFD80F5001D1518 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024DBC51EFD80F5001D1518 /* ViewController.swift */; };
+		E024DBC91EFD80F5001D1518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E024DBC71EFD80F5001D1518 /* Main.storyboard */; };
+		E024DBCC1EFD80F5001D1518 /* MYAWS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E024DBCA1EFD80F5001D1518 /* MYAWS.xcdatamodeld */; };
+		E024DBCE1EFD80F5001D1518 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E024DBCD1EFD80F5001D1518 /* Images.xcassets */; };
+		E024DBD11EFD80F5001D1518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E024DBCF1EFD80F5001D1518 /* LaunchScreen.storyboard */; };
+		F41D0E101F02D65D0047DAD5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E071F02D65D0047DAD5 /* CameraViewController.swift */; };
+		F41D0E111F02D65D0047DAD5 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41D0E081F02D65D0047DAD5 /* CameraViewController.xib */; };
+		F41D0E121F02D65D0047DAD5 /* GlobalSharedFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E091F02D65D0047DAD5 /* GlobalSharedFunc.swift */; };
+		F41D0E131F02D65D0047DAD5 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E0A1F02D65D0047DAD5 /* ImageViewController.swift */; };
+		F41D0E141F02D65D0047DAD5 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41D0E0B1F02D65D0047DAD5 /* ImageViewController.xib */; };
+		F41D0E151F02D65D0047DAD5 /* IPDFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E0D1F02D65D0047DAD5 /* IPDFCameraViewController.m */; };
+		F41D0E161F02D65D0047DAD5 /* PDFWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E0E1F02D65D0047DAD5 /* PDFWebViewController.swift */; };
+		F41D0E171F02D65D0047DAD5 /* PDFWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41D0E0F1F02D65D0047DAD5 /* PDFWebViewController.xib */; };
+		F41D0E251F02D6910047DAD5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F41D0E1A1F02D6910047DAD5 /* 2.png */; };
+		F41D0E261F02D6910047DAD5 /* DPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E1B1F02D6910047DAD5 /* DPIType.swift */; };
+		F41D0E271F02D6910047DAD5 /* FilePathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E1C1F02D6910047DAD5 /* FilePathConvertible.swift */; };
+		F41D0E281F02D6910047DAD5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F41D0E1D1F02D6910047DAD5 /* Info.plist */; };
+		F41D0E291F02D6910047DAD5 /* PDFGenerateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E1E1F02D6910047DAD5 /* PDFGenerateError.swift */; };
+		F41D0E2A1F02D6910047DAD5 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E201F02D6910047DAD5 /* PDFGenerator.swift */; };
+		F41D0E2B1F02D6910047DAD5 /* PDFPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E211F02D6910047DAD5 /* PDFPage.swift */; };
+		F41D0E2C1F02D6910047DAD5 /* PDFPageRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E221F02D6910047DAD5 /* PDFPageRenderable.swift */; };
+		F41D0E2D1F02D6910047DAD5 /* PDFPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D0E231F02D6910047DAD5 /* PDFPassword.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		140A5965202FEE0701E64E1B /* Pods-MYAWS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYAWS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MYAWS/Pods-MYAWS.release.xcconfig"; sourceTree = "<group>"; };
+		4CA969B1ACDF2FD8205290D0 /* Pods_MYAWS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYAWS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC2A7AD6DDAC88A42CD06C65 /* Pods-MYAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYAWS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MYAWS/Pods-MYAWS.debug.xcconfig"; sourceTree = "<group>"; };
+		E02486CC1EFD84E20003781C /* Darshan_receipt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Darshan_receipt.pdf; sourceTree = "<group>"; };
+		E02486D01EFE630A0003781C /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test.jpg; path = MYAWS/test.jpg; sourceTree = "<group>"; };
+		E024DBC01EFD80F5001D1518 /* MYAWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYAWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E024DBC31EFD80F5001D1518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E024DBC51EFD80F5001D1518 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E024DBC81EFD80F5001D1518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E024DBCB1EFD80F5001D1518 /* MYAWS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MYAWS.xcdatamodel; sourceTree = "<group>"; };
+		E024DBCD1EFD80F5001D1518 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E024DBD01EFD80F5001D1518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E024DBD21EFD80F5001D1518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F41D0E061F02D65D0047DAD5 /* MYAWS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MYAWS-Bridging-Header.h"; sourceTree = "<group>"; };
+		F41D0E071F02D65D0047DAD5 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F41D0E081F02D65D0047DAD5 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		F41D0E091F02D65D0047DAD5 /* GlobalSharedFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSharedFunc.swift; sourceTree = "<group>"; };
+		F41D0E0A1F02D65D0047DAD5 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		F41D0E0B1F02D65D0047DAD5 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
+		F41D0E0C1F02D65D0047DAD5 /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
+		F41D0E0D1F02D65D0047DAD5 /* IPDFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDFCameraViewController.m; sourceTree = "<group>"; };
+		F41D0E0E1F02D65D0047DAD5 /* PDFWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFWebViewController.swift; sourceTree = "<group>"; };
+		F41D0E0F1F02D65D0047DAD5 /* PDFWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDFWebViewController.xib; sourceTree = "<group>"; };
+		F41D0E1A1F02D6910047DAD5 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		F41D0E1B1F02D6910047DAD5 /* DPIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPIType.swift; sourceTree = "<group>"; };
+		F41D0E1C1F02D6910047DAD5 /* FilePathConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePathConvertible.swift; sourceTree = "<group>"; };
+		F41D0E1D1F02D6910047DAD5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F41D0E1E1F02D6910047DAD5 /* PDFGenerateError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGenerateError.swift; sourceTree = "<group>"; };
+		F41D0E1F1F02D6910047DAD5 /* PDFGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFGenerator.h; sourceTree = "<group>"; };
+		F41D0E201F02D6910047DAD5 /* PDFGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
+		F41D0E211F02D6910047DAD5 /* PDFPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPage.swift; sourceTree = "<group>"; };
+		F41D0E221F02D6910047DAD5 /* PDFPageRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPageRenderable.swift; sourceTree = "<group>"; };
+		F41D0E231F02D6910047DAD5 /* PDFPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPassword.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E024DBBD1EFD80F5001D1518 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98E02DE18EC1E76538290E9A /* Pods_MYAWS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		702A9DB59E25DB229CA430B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CA969B1ACDF2FD8205290D0 /* Pods_MYAWS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71EFD4DA8DAA19060DDD66CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC2A7AD6DDAC88A42CD06C65 /* Pods-MYAWS.debug.xcconfig */,
+				140A5965202FEE0701E64E1B /* Pods-MYAWS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E024DBB71EFD80F5001D1518 = {
+			isa = PBXGroup;
+			children = (
+				E02486D01EFE630A0003781C /* test.jpg */,
+				E024DBC21EFD80F5001D1518 /* MYAWS */,
+				E024DBC11EFD80F5001D1518 /* Products */,
+				71EFD4DA8DAA19060DDD66CD /* Pods */,
+				702A9DB59E25DB229CA430B5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E024DBC11EFD80F5001D1518 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E024DBC01EFD80F5001D1518 /* MYAWS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E024DBC21EFD80F5001D1518 /* MYAWS */ = {
+			isa = PBXGroup;
+			children = (
+				F41D0E051F02D6410047DAD5 /* ScanAndPDF */,
+				E02486CC1EFD84E20003781C /* Darshan_receipt.pdf */,
+				E024DBC31EFD80F5001D1518 /* AppDelegate.swift */,
+				E024DBC51EFD80F5001D1518 /* ViewController.swift */,
+				E024DBC71EFD80F5001D1518 /* Main.storyboard */,
+				E024DBCD1EFD80F5001D1518 /* Images.xcassets */,
+				E024DBCF1EFD80F5001D1518 /* LaunchScreen.storyboard */,
+				E024DBD21EFD80F5001D1518 /* Info.plist */,
+				E024DBCA1EFD80F5001D1518 /* MYAWS.xcdatamodeld */,
+			);
+			path = MYAWS;
+			sourceTree = "<group>";
+		};
+		F41D0E051F02D6410047DAD5 /* ScanAndPDF */ = {
+			isa = PBXGroup;
+			children = (
+				F41D0E181F02D6910047DAD5 /* PDFGenerator */,
+				F41D0E071F02D65D0047DAD5 /* CameraViewController.swift */,
+				F41D0E081F02D65D0047DAD5 /* CameraViewController.xib */,
+				F41D0E091F02D65D0047DAD5 /* GlobalSharedFunc.swift */,
+				F41D0E0A1F02D65D0047DAD5 /* ImageViewController.swift */,
+				F41D0E0B1F02D65D0047DAD5 /* ImageViewController.xib */,
+				F41D0E0C1F02D65D0047DAD5 /* IPDFCameraViewController.h */,
+				F41D0E0D1F02D65D0047DAD5 /* IPDFCameraViewController.m */,
+				F41D0E0E1F02D65D0047DAD5 /* PDFWebViewController.swift */,
+				F41D0E0F1F02D65D0047DAD5 /* PDFWebViewController.xib */,
+				F41D0E061F02D65D0047DAD5 /* MYAWS-Bridging-Header.h */,
+			);
+			path = ScanAndPDF;
+			sourceTree = "<group>";
+		};
+		F41D0E181F02D6910047DAD5 /* PDFGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				F41D0E1A1F02D6910047DAD5 /* 2.png */,
+				F41D0E1B1F02D6910047DAD5 /* DPIType.swift */,
+				F41D0E1C1F02D6910047DAD5 /* FilePathConvertible.swift */,
+				F41D0E1D1F02D6910047DAD5 /* Info.plist */,
+				F41D0E1E1F02D6910047DAD5 /* PDFGenerateError.swift */,
+				F41D0E1F1F02D6910047DAD5 /* PDFGenerator.h */,
+				F41D0E201F02D6910047DAD5 /* PDFGenerator.swift */,
+				F41D0E211F02D6910047DAD5 /* PDFPage.swift */,
+				F41D0E221F02D6910047DAD5 /* PDFPageRenderable.swift */,
+				F41D0E231F02D6910047DAD5 /* PDFPassword.swift */,
+			);
+			path = PDFGenerator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E024DBBF1EFD80F5001D1518 /* MYAWS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E024DBD51EFD80F5001D1518 /* Build configuration list for PBXNativeTarget "MYAWS" */;
+			buildPhases = (
+				E22080C878DEB0FEEF90C907 /* [CP] Check Pods Manifest.lock */,
+				E024DBBC1EFD80F5001D1518 /* Sources */,
+				E024DBBD1EFD80F5001D1518 /* Frameworks */,
+				E024DBBE1EFD80F5001D1518 /* Resources */,
+				35106B98355ADDA258905D08 /* [CP] Embed Pods Frameworks */,
+				EF2DE86175A2EE2B915CA643 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MYAWS;
+			productName = MYAWS;
+			productReference = E024DBC01EFD80F5001D1518 /* MYAWS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E024DBB81EFD80F5001D1518 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "chinnababu kamanuri";
+				TargetAttributes = {
+					E024DBBF1EFD80F5001D1518 = {
+						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E024DBBB1EFD80F5001D1518 /* Build configuration list for PBXProject "MYAWS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E024DBB71EFD80F5001D1518;
+			productRefGroup = E024DBC11EFD80F5001D1518 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E024DBBF1EFD80F5001D1518 /* MYAWS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E024DBBE1EFD80F5001D1518 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F41D0E171F02D65D0047DAD5 /* PDFWebViewController.xib in Resources */,
+				F41D0E251F02D6910047DAD5 /* 2.png in Resources */,
+				E024DBD11EFD80F5001D1518 /* LaunchScreen.storyboard in Resources */,
+				E02486D11EFE630A0003781C /* test.jpg in Resources */,
+				E024DBCE1EFD80F5001D1518 /* Images.xcassets in Resources */,
+				F41D0E111F02D65D0047DAD5 /* CameraViewController.xib in Resources */,
+				F41D0E141F02D65D0047DAD5 /* ImageViewController.xib in Resources */,
+				F41D0E281F02D6910047DAD5 /* Info.plist in Resources */,
+				E024DBC91EFD80F5001D1518 /* Main.storyboard in Resources */,
+				E02486CD1EFD84E20003781C /* Darshan_receipt.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35106B98355ADDA258905D08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MYAWS/Pods-MYAWS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E22080C878DEB0FEEF90C907 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF2DE86175A2EE2B915CA643 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MYAWS/Pods-MYAWS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E024DBBC1EFD80F5001D1518 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F41D0E271F02D6910047DAD5 /* FilePathConvertible.swift in Sources */,
+				E024DBC61EFD80F5001D1518 /* ViewController.swift in Sources */,
+				F41D0E2A1F02D6910047DAD5 /* PDFGenerator.swift in Sources */,
+				F41D0E101F02D65D0047DAD5 /* CameraViewController.swift in Sources */,
+				F41D0E151F02D65D0047DAD5 /* IPDFCameraViewController.m in Sources */,
+				F41D0E2B1F02D6910047DAD5 /* PDFPage.swift in Sources */,
+				E024DBC41EFD80F5001D1518 /* AppDelegate.swift in Sources */,
+				F41D0E161F02D65D0047DAD5 /* PDFWebViewController.swift in Sources */,
+				F41D0E121F02D65D0047DAD5 /* GlobalSharedFunc.swift in Sources */,
+				F41D0E2C1F02D6910047DAD5 /* PDFPageRenderable.swift in Sources */,
+				F41D0E2D1F02D6910047DAD5 /* PDFPassword.swift in Sources */,
+				F41D0E131F02D65D0047DAD5 /* ImageViewController.swift in Sources */,
+				E024DBCC1EFD80F5001D1518 /* MYAWS.xcdatamodeld in Sources */,
+				F41D0E291F02D6910047DAD5 /* PDFGenerateError.swift in Sources */,
+				F41D0E261F02D6910047DAD5 /* DPIType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E024DBC71EFD80F5001D1518 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E024DBC81EFD80F5001D1518 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E024DBCF1EFD80F5001D1518 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E024DBD01EFD80F5001D1518 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E024DBD31EFD80F5001D1518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E024DBD41EFD80F5001D1518 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E024DBD61EFD80F5001D1518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC2A7AD6DDAC88A42CD06C65 /* Pods-MYAWS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = MYAWS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chinnababu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MYAWS/ScanAndPDF/MYAWS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E024DBD71EFD80F5001D1518 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 140A5965202FEE0701E64E1B /* Pods-MYAWS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = MYAWS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = chinnababu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MYAWS/ScanAndPDF/MYAWS-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E024DBBB1EFD80F5001D1518 /* Build configuration list for PBXProject "MYAWS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E024DBD31EFD80F5001D1518 /* Debug */,
+				E024DBD41EFD80F5001D1518 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E024DBD51EFD80F5001D1518 /* Build configuration list for PBXNativeTarget "MYAWS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E024DBD61EFD80F5001D1518 /* Debug */,
+				E024DBD71EFD80F5001D1518 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E024DBCA1EFD80F5001D1518 /* MYAWS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E024DBCB1EFD80F5001D1518 /* MYAWS.xcdatamodel */,
+			);
+			currentVersion = E024DBCB1EFD80F5001D1518 /* MYAWS.xcdatamodel */;
+			path = MYAWS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E024DBB81EFD80F5001D1518 /* Project object */;
+}
