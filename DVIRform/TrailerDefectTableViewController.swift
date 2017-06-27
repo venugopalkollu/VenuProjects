@@ -12,7 +12,9 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
     
     var trailerDefects :NSMutableArray = []
     var selectedIndexArrayForTrailer: NSMutableArray = []
-    var complertionHandler:((_ valuesArray:NSMutableArray) -> Void)?
+    var trailerComments = NSMutableDictionary()
+
+    var complertionHandler:((_ valuesDict:NSMutableDictionary,_ comments:NSMutableDictionary) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,21 +29,23 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let rightButton  = UIBarButtonItem(title: "done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
+        let rightButton  = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
         self.navigationItem.rightBarButtonItem = rightButton
     }
     
     func rightButtonTapped(sender: UIBarButtonItem){
         let tempArray = NSMutableArray()
+        let dict = NSMutableDictionary()
         for value in selectedIndexArrayForTrailer{
             let tempIndex = value as! Int
             let valueToDisplay = self.trailerDefects.object(at: tempIndex)
-            tempArray.add(valueToDisplay)
+            dict.setObject(valueToDisplay, forKey: tempIndex as NSCopying)
         }
-        self.complertionHandler!(tempArray)
         
-               self.navigationController?.popViewController(animated: true)
-
+        self.complertionHandler!(dict, trailerComments)
+        
+        self.navigationController?.popViewController(animated: true)
+        
         print("Done Button Clicked")
         
     }
@@ -66,6 +70,9 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrailerDefectsCell", for: indexPath) as! CustomTrailerDefectsTableViewCell
         cell.checkBoxDelegateForTrailer = self
         cell.trailerDefectsLabel?.text = trailerDefects[indexPath.row] as? String
+        cell.txtTrailerComments.delegate = self;
+        cell.txtTrailerComments.tag = indexPath.row;
+
         if selectedIndexArrayForTrailer.contains(indexPath.row){
             
             cell.trailerCheckBoxButton.setImage(cell.checkBox, for: UIControlState.normal)
@@ -75,7 +82,8 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
             cell.trailerCheckBoxButton.setImage(cell.uncheckBox, for: UIControlState.normal)
             cell.txtTrailerComments.isHidden = true
             cell.lblTrailerComments.isHidden = true
-            
+            cell.txtTrailerComments.tag = indexPath.row
+
         }
         cell.trailerCheckBoxButton.tag = indexPath.row
         
@@ -108,6 +116,11 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("chinna")
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        trailerComments.setObject(textField.text!, forKey: textField.tag as NSCopying)
+        
+    }
+
     
 }
     /*

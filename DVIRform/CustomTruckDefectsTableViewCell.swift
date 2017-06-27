@@ -31,6 +31,8 @@ class CustomTruckDefectsTableViewCell: UITableViewCell,UITextFieldDelegate {
         // Initialization code
         
          isboxClicked = false
+    
+        
         
     }
         
@@ -45,7 +47,8 @@ class CustomTruckDefectsTableViewCell: UITableViewCell,UITextFieldDelegate {
         let button = sender as! UIButton
         self.checkBoxDelegate?.isCheckBoxSelected(index: button.tag)
     }
-}
+    
+   }
     
     
 

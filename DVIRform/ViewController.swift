@@ -13,12 +13,19 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
     
     @IBAction func getDataForDate(_ sender: Any) {
         dateSelected = "2017-05-26"
+       getDataFromView(selectedIndex: 1, date:"2017-05-26")
+        getDataFromView(selectedIndex: 2, date:"2017-05-26")
+ 
+       
         
     }
     
     @IBAction func clearDataForAnotherDate(_ sender: Any) {
         dateSelected = "2017-06-28"
-        
+        getDataFromView(selectedIndex:1, date:"2017-06-28")
+        getDataFromView(selectedIndex:2, date:"2017-06-28")
+
+
     }
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -34,12 +41,18 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
     var view1:View1?
     var view2:View2?
     var view3:View3?
-    var truckDefectTableViewController:TruckDefectTableViewController?
-    var trailerDefectTableViewController:TrailerDefectTableViewController?
-    var customTruckDefectTableViewCell:CustomTruckDefectsTableViewCell?
-    var customTrailerDefectTableViewCell:CustomTrailerDefectsTableViewCell?
+    
     var trailerValues:NSMutableArray = []
     var truckValues:NSMutableArray = []
+    
+    var truckValuesDict = NSMutableDictionary()
+    var truckCommentsDict = NSMutableDictionary()
+    
+    var trailerValuesDict = NSMutableDictionary()
+    var trailerCommentsDict = NSMutableDictionary()
+    
+    var dvirIdDict = NSMutableDictionary()
+    var managedObjectContext:NSManagedObjectContext?
     private var dvirItems:NSArray = []
     
     
@@ -61,7 +74,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         self.view1?.completionHandler = {
             (selecetdValue) -> Void in
             self.saveDataFromView(selectedIndex: selecetdValue)
-            self.updateCoreDataValues(selectedIndex: selecetdValue)
         }
         self.dvirView.addSubview(view1!)
         
@@ -80,7 +92,6 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         self.view2?.completionHandler = {
             (selecetdValue) -> Void in
             self.saveDataFromView(selectedIndex: selecetdValue)
-            self.updateCoreDataValues(selectedIndex: selecetdValue)
         }
         
         self.dvirView.addSubview(view2!)
@@ -95,18 +106,19 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         self.view3?.completionHandler = {
             (selecetdValue) -> Void in
             self.saveDataFromView(selectedIndex: selecetdValue)
-            self.updateCoreDataValues(selectedIndex: selecetdValue)
         }
         
         self.dvirView.addSubview(view3!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         loadView1()
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        registerKeyboardNotifications()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -120,12 +132,14 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
     func showDefectesTableView(){
         let tableView = TruckDefectTableViewController()
         tableView.complertionHandler = {
-            (valuesArray) -> Void in
-            self.truckValues = valuesArray
+            (valuesDict,comments) -> Void in
+            self.truckValuesDict = valuesDict
+            self.truckCommentsDict = comments
+            let values = valuesDict.allValues
             
             let separator = ","
             
-            let formattedArray = (valuesArray.map{String(describing: $0)}).joined(separator: ",")
+            let formattedArray = (values.map{String(describing: $0)}).joined(separator: ",")
             self.view2?.txtAddRemoveTruckDefects.text = formattedArray
             
         }
@@ -136,34 +150,46 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
     func showAnotherDefectsTableView() {
         let tableView = TrailerDefectTableViewController()
         tableView.complertionHandler = {
-            (valuesArray) -> Void in
-            self.trailerValues = valuesArray
+            (valuesDict,comments) -> Void in
+            self.trailerValuesDict = valuesDict
+            self.trailerCommentsDict = comments
+            let values = valuesDict.allValues
             
             let separator = ","
             
-            let formattedArray = (valuesArray.map{String(describing: $0)}).joined(separator: ",")
+            let formattedArray = (values.map{String(describing: $0)}).joined(separator: ",")
             self.view2?.txtAddRemoveTrailerDefects.text = formattedArray
             
         }
-        //.instanceFromNib() as! TrailerDefectsTableView;
         self.navigationController?.pushViewController(tableView, animated: true)
     }
     
+    // Save Data
     
     func saveDataFromView(selectedIndex:Int){
-        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        var dvir =   checkDataExistForTheDate()
+        
+        if let dvir = dvir{
+            
+        }else{
+            dvir = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext!) as! Dvir
+        }
+        
+        
         
         if(selectedIndex == 1){
-            let view1Items = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext) as! Dvir
-            view1Items.carrier = view1?.txtCarrier.text
-            view1Items.location = view1?.txtLocation.text
-            view1Items.odometer = Int16((view1?.txtOdometer.text!)!)!
+            
+            
+            dvir?.carrier = view1?.txtCarrier.text
+            dvir?.location = view1?.txtLocation.text
+            dvir?.odometer = Int16((view1?.txtOdometer.text!)!)!
             
             let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
-            view1Items.setValue(date, forKey: "elogDate")
-            view1Items.elogDate = date;
+            dvir?.setValue(date, forKey: "elogDate")
+            dvir?.elogDate = date;
             do{
-                try managedObjectContext.save()
+                try managedObjectContext?.save()
                 print ("Saved")
             }
             catch{
@@ -174,44 +200,90 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
             
         }
         else if(selectedIndex == 2){
-            let view2Items = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext) as! Dvir
-            let view2TruckComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTruckDefectMapping", into: managedObjectContext) as! DvirTruckDefectMapping
-            let view2TrailerComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTrailerDefectMapping", into: managedObjectContext) as! DvirTrailerDefectMapping
-            let view2TruckItems = NSEntityDescription.insertNewObject(forEntityName: "TruckDefect", into: managedObjectContext) as! TruckDefect
-            let  view2TrailerItems  = NSEntityDescription.insertNewObject(forEntityName: "TrailerDefect", into: managedObjectContext) as! TrailerDefect
+           
             
-            view2Items.truckNumber = view2?.txtTruckNumber.text
-            view2Items.trailerNumber = view2?.txtTrailerNumber.text
-            view2TruckComments.comment = customTruckDefectTableViewCell?.txtComments.text
-            view2TrailerComments.comment = customTrailerDefectTableViewCell?.txtTrailerComments.text
-            view2TruckItems.name = customTruckDefectTableViewCell?.truckDefectLabel.text
-            view2TrailerItems.name = customTrailerDefectTableViewCell?.trailerDefectsLabel.text
+            dvir?.truckNumber = view2?.txtTruckNumber.text
+            dvir?.trailerNumber = view2?.txtTrailerNumber.text
             
+            /*           let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
+             dvir.setValue(date, forKey: "elogDate")
+             dvir.elogDate = date;
+             
+             */
+            /* do{
+             try managedObjectContext.save()
+             print ("Saved")
+             }
+             catch{
+             let nserror = error as NSError
+             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+             abort()
+             }*/
+            // mapping truckDefects with dvir
             
-            let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
-            view2Items.setValue(date, forKey: "elogDate")
-            view2Items.elogDate = date;
-            do{
-                try managedObjectContext.save()
-                print ("Saved")
+            let keys = self.truckValuesDict.allKeys
+            for tempKey in keys{
+                let truckdefects = NSEntityDescription.insertNewObject(forEntityName: "TruckDefect", into: managedObjectContext!) as! TruckDefect
+                let value = self.truckValuesDict.object(forKey: tempKey);
+                
+                truckdefects.id = Int16(tempKey as! Int)
+                truckdefects.name = value as! String
+                
+                let truckComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTruckDefectMapping", into: managedObjectContext!) as! DvirTruckDefectMapping
+                truckComments.comment = self.truckCommentsDict.object(forKey: tempKey) as! String
+                truckComments.truckId = Int16(tempKey as! Int)
+                
+                
+                do{
+                    try managedObjectContext?.save()
+                    print ("Saved")
+                }
+                catch{
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
+                
             }
-            catch{
-                let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                abort()
+            
+            // mapping trailerDefects with dvir
+            
+            let key = self.trailerValuesDict.allKeys
+            for tempKey in key{
+                let trailerdefects = NSEntityDescription.insertNewObject(forEntityName: "TrailerDefect", into: managedObjectContext!) as! TrailerDefect
+                let value = self.trailerValuesDict.object(forKey: tempKey);
+                
+                trailerdefects.id = Int16(tempKey as! Int)
+                trailerdefects.name = value as! String
+                
+                let trailerComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTrailerDefectMapping", into: managedObjectContext!) as! DvirTrailerDefectMapping
+                trailerComments.comment = self.trailerCommentsDict.object(forKey: tempKey) as! String
+                trailerComments.trailerDefectId = Int16(tempKey as! Int)
+                
+                
+                do{
+                    try managedObjectContext?.save()
+                    print ("Saved")
+                }
+                catch{
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
+                
             }
             
             
         }
         else if(selectedIndex == 3){
-            let view3Items = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext) as! Dvir
-            view3Items.driverSignature = String(describing: view3?.driverSignatureView!)
-            view3Items.mechanicSignature = String(describing: view3?.mechanicSignatureView!)
+            convertImage()
+            //            dvir?.driverSignature =  view3?.driverSignatureView!
+            //            dvir?.mechanicSignature = view3?.mechanicSignatureView!
             let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
-            view3Items.setValue(date, forKey: "elogDate")
-            view3Items.elogDate = date;
+            dvir?.setValue(date, forKey: "elogDate")
+            dvir?.elogDate = date;
             do{
-                try managedObjectContext.save()
+                try managedObjectContext?.save()
                 print ("Saved")
             }
             catch{
@@ -224,13 +296,41 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         }
         
     }
+    func convertImage(){
+        let image = UIImagePNGRepresentation((view3?.driverSignatureView!.image!)!) as NSData?
+        view3?.driverSignatureView!.image = UIImage(data: image! as Data)
+        
+    }
+    
+    func checkDataExistForTheDate() -> Dvir?{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dvir")
+        
+        let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
+        do {
+            fetchRequest.predicate = NSPredicate(format: "elogDate == %@",date as NSDate)
+            dvirItems = try managedObjectContext?.fetch(fetchRequest) as! NSArray
+            print("venu", dvirItems.count)
+            
+            if dvirItems.count > 0{
+                return dvirItems.object(at: 0) as? Dvir
+            }
+        }
+        catch {
+            print("Failed to retrieve record")
+            print(error)
+        }
+        
+        return nil
+    }
+    
+    // Retreive Data
     
     func getDataFromView(selectedIndex:Int, date:String) {
         let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dvir")
+        
         if (selectedIndex == 1){
             let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
-            
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dvir")
             do {
                 fetchRequest.predicate = NSPredicate(format: "elogDate == %@",date as NSDate)
                 dvirItems = try managedObjectContext.fetch(fetchRequest) as NSArray
@@ -240,7 +340,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                     displayDataForTheDateSelected(selectedIndex: 1, dvirItems: dvirItems)
                 }else{
                     isDataExistForTheDate = false;
-                    //    clearExistingDataWhenAnotherDateSelected(dvirItems: [])
+                    clearExistingDataWhenAnotherDateSelected(dvirItems: [])
                 }
             }
             catch {
@@ -250,8 +350,46 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         }
         else if (selectedIndex == 2){
             
+            let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
+            do {
+                fetchRequest.predicate = NSPredicate(format: "elogDate == %@",date as NSDate)
+                dvirItems = try managedObjectContext.fetch(fetchRequest) as NSArray
+                print("venu", dvirItems.count)
+                
+                if dvirItems.count > 0{
+                    displayDataForTheDateSelected(selectedIndex: 2, dvirItems: dvirItems)
+                }else{
+                    isDataExistForTheDate = false;
+                    clearExistingDataWhenAnotherDateSelected(dvirItems: [])
+                }
+            }
+            catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+            
+            
         }
         else if (selectedIndex == 3){
+            
+            let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
+            do {
+                fetchRequest.predicate = NSPredicate(format: "elogDate == %@",date as NSDate)
+                dvirItems = try managedObjectContext.fetch(fetchRequest) as NSArray
+                print("venu", dvirItems.count)
+                
+                if dvirItems.count > 0{
+                    displayDataForTheDateSelected(selectedIndex: 3, dvirItems: dvirItems)
+                }else{
+                    isDataExistForTheDate = false;
+                    clearExistingDataWhenAnotherDateSelected(dvirItems: [])
+                }
+            }
+            catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+            
             
         }
     }
@@ -266,6 +404,21 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
             
         }
         else if(selectedIndex == 2){
+            isDataExistForTheDate = true;
+            if (selectedIndex == 2){
+                let obj2 = dvirItems.object(at: 0) as! Dvir
+                view2?.txtTruckNumber.text = obj2.truckNumber;
+                view2?.txtTrailerNumber.text = obj2.trailerNumber;
+                
+               let obj3 = dvirItems.object(at: 0) as! TruckDefect
+                view2?.txtAddRemoveTruckDefects.text = obj3.name;
+                
+                let obj4 = dvirItems.object(at: 0) as! TrailerDefect
+                view2?.txtAddRemoveTrailerDefects.text = obj4.name;
+                
+               let obj5 = dvirItems.object(at: 0) as! DvirTruckDefectMapping
+  
+            }
             
         }
         else if(selectedIndex == 3){
@@ -274,21 +427,24 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         
         
     }
+    
+ /*
     func updateCoreDataValues(selectedIndex:Int){
         if (selectedIndex == 1 ){
-            let obj1 = dvirItems.object(at: 0) as! Dvir
-            obj1.carrier = view1?.txtCarrier.text
-            obj1.location = view1?.txtLocation.text
-            obj1.odometer = Int16((view1?.txtOdometer.text!)!)!
-            do{
-                try obj1.managedObjectContext?.save()
-                print("chinna", dvirItems.count)
+            if dvirItems.count>0{
+                let obj1 = dvirItems.object(at: 0) as! Dvir
+                obj1.carrier = view1?.txtCarrier.text
+                obj1.location = view1?.txtLocation.text
+                obj1.odometer = Int16((view1?.txtOdometer.text!)!)!
+                do{
+                    try obj1.managedObjectContext?.save()
+                    print("venu", dvirItems.count)
+                }
+                    
+                catch{
+                    print("Failed to retrieve record")
+                }
             }
-                
-            catch{
-                print("Failed to retrieve record")
-            }
-            
             
         }
         else if(selectedIndex == 2){
@@ -298,7 +454,12 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
             
         }
     }
-    
+*/
+    func clearExistingDataWhenAnotherDateSelected(dvirItems:NSArray){
+        for case let textField as UITextField in self.dvirView.subviews {
+            textField.text = ""
+        }
+    }
     
     
     func dateFromString(date: String, format: String) -> NSDate {
@@ -308,6 +469,46 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         formatter.dateFormat = format
         
         return formatter.date(from: date)! as NSDate    }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardDidShow(notification: NSNotification)
+    {
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 10;
+        self.scrollView.contentInset = contentInset
+        //if let userInfo = notification.userInfo
+    }
+    
+    /**
+     This method is fired when the keyboard is hidden.
+     */
+    func keyboardWillHide(notification: NSNotification){
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        self.scrollView.contentInset = contentInset
+    }
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ViewController.keyboardDidShow(notification:)),
+                                               name: NSNotification.Name.UIKeyboardDidShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ViewController.keyboardWillHide(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+
     
 }
 

@@ -9,11 +9,7 @@
 /* Begin PBXBuildFile section */
 		E0282A9A1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0282A951EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift */; };
 		E0282A9B1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A961EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib */; };
-		E0282A9C1EEBC1E8007CF1AF /* TruckDefectsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0282A971EEBC1E8007CF1AF /* TruckDefectsTableView.swift */; };
-		E0282A9D1EEBC1E8007CF1AF /* TruckDefectsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A981EEBC1E8007CF1AF /* TruckDefectsTableView.xib */; };
 		E0282A9E1EEBC1E8007CF1AF /* View1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A991EEBC1E8007CF1AF /* View1.xib */; };
-		F416A0631EEEBE39009A09D1 /* TrailerDefectsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416A0621EEEBE39009A09D1 /* TrailerDefectsTableView.swift */; };
-		F416A0651EEEBE7E009A09D1 /* TrailerDefectsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F416A0641EEEBE7E009A09D1 /* TrailerDefectsTableView.xib */; };
 		F416A0681EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */; };
 		F416A0691EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */; };
 		F43ACAC41EDC30CE00F96397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAC31EDC30CE00F96397 /* AppDelegate.swift */; };
@@ -68,11 +64,7 @@
 /* Begin PBXFileReference section */
 		E0282A951EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTruckDefectsTableViewCell.swift; sourceTree = "<group>"; };
 		E0282A961EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTruckDefectsTableViewCell.xib; sourceTree = "<group>"; };
-		E0282A971EEBC1E8007CF1AF /* TruckDefectsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckDefectsTableView.swift; sourceTree = "<group>"; };
-		E0282A981EEBC1E8007CF1AF /* TruckDefectsTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TruckDefectsTableView.xib; sourceTree = "<group>"; };
 		E0282A991EEBC1E8007CF1AF /* View1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View1.xib; sourceTree = "<group>"; };
-		F416A0621EEEBE39009A09D1 /* TrailerDefectsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailerDefectsTableView.swift; sourceTree = "<group>"; };
-		F416A0641EEEBE7E009A09D1 /* TrailerDefectsTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrailerDefectsTableView.xib; sourceTree = "<group>"; };
 		F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTrailerDefectsTableViewCell.swift; sourceTree = "<group>"; };
 		F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTrailerDefectsTableViewCell.xib; sourceTree = "<group>"; };
 		F43ACAC01EDC30CE00F96397 /* DVIRform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVIRform.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,14 +173,10 @@
 				F43ACB021EDCA95800F96397 /* View2.xib */,
 				E0282A951EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.swift */,
 				E0282A961EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib */,
-				E0282A971EEBC1E8007CF1AF /* TruckDefectsTableView.swift */,
-				E0282A981EEBC1E8007CF1AF /* TruckDefectsTableView.xib */,
 				F44A77EB1EF847E700046915 /* TruckDefectTableViewController.swift */,
 				F44A77EC1EF847E700046915 /* TruckDefectTableViewController.xib */,
 				F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */,
 				F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */,
-				F416A0621EEEBE39009A09D1 /* TrailerDefectsTableView.swift */,
-				F416A0641EEEBE7E009A09D1 /* TrailerDefectsTableView.xib */,
 				F44A77EF1EF84E6900046915 /* TrailerDefectTableViewController.swift */,
 				F44A77F01EF84E6900046915 /* TrailerDefectTableViewController.xib */,
 				F43ACB041EDCA98900F96397 /* View3.swift */,
@@ -338,9 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44A77F21EF84E6900046915 /* TrailerDefectTableViewController.xib in Resources */,
-				E0282A9D1EEBC1E8007CF1AF /* TruckDefectsTableView.xib in Resources */,
 				F43ACAD11EDC30CE00F96397 /* LaunchScreen.storyboard in Resources */,
-				F416A0651EEEBE7E009A09D1 /* TrailerDefectsTableView.xib in Resources */,
 				F43ACACE1EDC30CE00F96397 /* Assets.xcassets in Resources */,
 				F43ACB071EDCA99800F96397 /* View3.xib in Resources */,
 				F44A77EE1EF847E700046915 /* TruckDefectTableViewController.xib in Resources */,
@@ -375,7 +361,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0282A9C1EEBC1E8007CF1AF /* TruckDefectsTableView.swift in Sources */,
 				F43ACB011EDCA94600F96397 /* View2.swift in Sources */,
 				F44A77ED1EF847E700046915 /* TruckDefectTableViewController.swift in Sources */,
 				F44A77E11EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataClass.swift in Sources */,
@@ -394,7 +379,6 @@
 				F44A77E91EF7A70D00046915 /* TruckDefect+CoreDataClass.swift in Sources */,
 				F44A77E21EF7A70D00046915 /* DvirTrailerDefectMapping+CoreDataProperties.swift in Sources */,
 				F416A0681EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift in Sources */,
-				F416A0631EEEBE39009A09D1 /* TrailerDefectsTableView.swift in Sources */,
 				F44A77E51EF7A70D00046915 /* DvirTruckDefectMapping+CoreDataClass.swift in Sources */,
 				F43ACACC1EDC30CE00F96397 /* DVIRform.xcdatamodeld in Sources */,
 			);

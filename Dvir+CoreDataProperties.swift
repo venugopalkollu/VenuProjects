@@ -19,11 +19,11 @@ extension Dvir {
     @NSManaged public var carrier: String?
     @NSManaged public var createdAt: NSDate?
     @NSManaged public var defectsCorrected: Int16
-    @NSManaged public var driverSignature: String?
+    @NSManaged public var driverSignature: NSData?
     @NSManaged public var id: Int16
     @NSManaged public var lastSyncAt: String?
     @NSManaged public var location: String?
-    @NSManaged public var mechanicSignature: String?
+    @NSManaged public var mechanicSignature: NSData?
     @NSManaged public var odometer: Int16
     @NSManaged public var serverId: Int16
     @NSManaged public var syncRequired: Int16

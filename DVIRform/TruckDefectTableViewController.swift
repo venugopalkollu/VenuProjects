@@ -13,7 +13,8 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
     
     var truckDefects :NSMutableArray = []
     var selectedIndexArray: NSMutableArray = []
-    var complertionHandler:((_ valuesArray:NSMutableArray) -> Void)?
+    var truckComments = NSMutableDictionary()
+    var complertionHandler:((_ valuesDict:NSMutableDictionary,_ comments:NSMutableDictionary) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +27,20 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
             tableView.delegate = self
         self.navigationController?.navigationBar.isTranslucent = false;
         
-        let rightButton  = UIBarButtonItem(title: "done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
+        let rightButton  = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
         self.navigationItem.rightBarButtonItem = rightButton
         registerKeyboardNotifications()
             }
     
     func rightButtonTapped(sender: UIBarButtonItem){
         let tempArray = NSMutableArray()
+        let dict = NSMutableDictionary()
         for value in selectedIndexArray{
             let tempIndex = value as! Int
             let valueToDisplay = self.truckDefects.object(at: tempIndex)
-            tempArray.add(valueToDisplay)
+            dict.setObject(valueToDisplay, forKey: tempIndex as NSCopying)
         }
-        self.complertionHandler!(tempArray)
+        self.complertionHandler!(dict,truckComments)
         
         self.navigationController?.popViewController(animated: true)
         
@@ -70,10 +72,13 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "TruckDefectsCell", for: indexPath) as! CustomTruckDefectsTableViewCell
         cell.checkBoxDelegate = self
         cell.truckDefectLabel?.text = truckDefects[indexPath.row] as? String
+        cell.txtComments.delegate = self;
+        cell.txtComments.tag = indexPath.row;
         if selectedIndexArray.contains(indexPath.row){
             cell.checkBoxButton.setImage(cell.checkBox, for: UIControlState.normal)
             cell.txtComments.isHidden = false
             cell.lblComments.isHidden = false
+            
             
             
         }else{
@@ -109,7 +114,14 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
             return 50
             
         }
-        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        truckComments.setObject(textField.text!, forKey: textField.tag as NSCopying)
+
     }
     
     
@@ -143,11 +155,11 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
     
     func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(TruckDefectsTableView.keyboardDidShow(notification:)),
+                                               selector: #selector(TruckDefectTableViewController.keyboardDidShow(notification:)),
                                                name: NSNotification.Name.UIKeyboardDidShow,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(TruckDefectsTableView.keyboardWillHide(notification:)),
+                                               selector: #selector(TruckDefectTableViewController.keyboardWillHide(notification:)),
                                                name: NSNotification.Name.UIKeyboardWillHide,
                                                object: nil)
     }
