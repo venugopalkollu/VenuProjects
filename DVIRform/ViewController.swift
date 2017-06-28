@@ -188,6 +188,27 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
             let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
             dvir?.setValue(date, forKey: "elogDate")
             dvir?.elogDate = date;
+            
+            
+            
+            
+            let keys = self.dvirIdDict.allKeys
+            for tempKey in keys{
+                let dvir = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext!) as! Dvir
+                
+                let value = self.dvirIdDict.object(forKey: tempKey);
+                
+                dvir.id = Int16(tempKey as! Int)
+                dvir.elogDate = value as! Date as NSDate
+                
+                let truckComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTruckDefectMapping", into: managedObjectContext!) as! DvirTruckDefectMapping
+                truckComments.dvirId = Int16(tempKey as! Int)
+                
+                
+                let trailerComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTrailerDefectMapping", into: managedObjectContext!) as! DvirTrailerDefectMapping
+                trailerComments.dvirId = Int16(tempKey as! Int)
+            }
+            
             do{
                 try managedObjectContext?.save()
                 print ("Saved")
@@ -205,21 +226,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
             dvir?.truckNumber = view2?.txtTruckNumber.text
             dvir?.trailerNumber = view2?.txtTrailerNumber.text
             
-            /*           let date = dateFromString(date: dateSelected, format:  "yyyy-MM-dd ")
-             dvir.setValue(date, forKey: "elogDate")
-             dvir.elogDate = date;
-             
-             */
-            /* do{
-             try managedObjectContext.save()
-             print ("Saved")
-             }
-             catch{
-             let nserror = error as NSError
-             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-             abort()
-             }*/
-            // mapping truckDefects with dvir
+// mapping truckDefects with dvir
             
             let keys = self.truckValuesDict.allKeys
             for tempKey in keys{
@@ -232,6 +239,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                 let truckComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTruckDefectMapping", into: managedObjectContext!) as! DvirTruckDefectMapping
                 truckComments.comment = self.truckCommentsDict.object(forKey: tempKey) as! String
                 truckComments.truckId = Int16(tempKey as! Int)
+            
                 
                 
                 do{
@@ -246,7 +254,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                 
             }
             
-            // mapping trailerDefects with dvir
+// mapping trailerDefects with dvir
             
             let key = self.trailerValuesDict.allKeys
             for tempKey in key{

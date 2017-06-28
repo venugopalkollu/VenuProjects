@@ -12,11 +12,12 @@
 		E0282A9E1EEBC1E8007CF1AF /* View1.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0282A991EEBC1E8007CF1AF /* View1.xib */; };
 		F416A0681EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */; };
 		F416A0691EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */; };
+		F41D0E041F02CD1D0047DAD5 /* ETruckPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = F41D0E031F02CD1D0047DAD5 /* ETruckPlist.plist */; };
 		F43ACAC41EDC30CE00F96397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAC31EDC30CE00F96397 /* AppDelegate.swift */; };
 		F43ACAC61EDC30CE00F96397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAC51EDC30CE00F96397 /* ViewController.swift */; };
 		F43ACAC91EDC30CE00F96397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43ACAC71EDC30CE00F96397 /* Main.storyboard */; };
 		F43ACACC1EDC30CE00F96397 /* DVIRform.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F43ACACA1EDC30CE00F96397 /* DVIRform.xcdatamodeld */; };
-		F43ACACE1EDC30CE00F96397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43ACACD1EDC30CE00F96397 /* Assets.xcassets */; };
+		F43ACACE1EDC30CE00F96397 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43ACACD1EDC30CE00F96397 /* Images.xcassets */; };
 		F43ACAD11EDC30CE00F96397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43ACACF1EDC30CE00F96397 /* LaunchScreen.storyboard */; };
 		F43ACADC1EDC30CE00F96397 /* DVIRformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACADB1EDC30CE00F96397 /* DVIRformTests.swift */; };
 		F43ACAE71EDC30CE00F96397 /* DVIRformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ACAE61EDC30CE00F96397 /* DVIRformUITests.swift */; };
@@ -67,12 +68,13 @@
 		E0282A991EEBC1E8007CF1AF /* View1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View1.xib; sourceTree = "<group>"; };
 		F416A0661EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTrailerDefectsTableViewCell.swift; sourceTree = "<group>"; };
 		F416A0671EEEBFF8009A09D1 /* CustomTrailerDefectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTrailerDefectsTableViewCell.xib; sourceTree = "<group>"; };
+		F41D0E031F02CD1D0047DAD5 /* ETruckPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETruckPlist.plist; sourceTree = "<group>"; };
 		F43ACAC01EDC30CE00F96397 /* DVIRform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVIRform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43ACAC31EDC30CE00F96397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F43ACAC51EDC30CE00F96397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F43ACAC81EDC30CE00F96397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F43ACACB1EDC30CE00F96397 /* DVIRform.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DVIRform.xcdatamodel; sourceTree = "<group>"; };
-		F43ACACD1EDC30CE00F96397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F43ACACD1EDC30CE00F96397 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F43ACAD01EDC30CE00F96397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F43ACAD21EDC30CE00F96397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43ACAD71EDC30CE00F96397 /* DVIRformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DVIRformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,9 +184,10 @@
 				F43ACB041EDCA98900F96397 /* View3.swift */,
 				F43ACB061EDCA99800F96397 /* View3.xib */,
 				F43ACAC71EDC30CE00F96397 /* Main.storyboard */,
-				F43ACACD1EDC30CE00F96397 /* Assets.xcassets */,
+				F43ACACD1EDC30CE00F96397 /* Images.xcassets */,
 				F43ACACF1EDC30CE00F96397 /* LaunchScreen.storyboard */,
 				F43ACAD21EDC30CE00F96397 /* Info.plist */,
+				F41D0E031F02CD1D0047DAD5 /* ETruckPlist.plist */,
 				F43ACACA1EDC30CE00F96397 /* DVIRform.xcdatamodeld */,
 				F43DA3121EF0042800167575 /* checkbox-unchecked.png */,
 				F43DA3141EF0043200167575 /* checkBox-Checked.png */,
@@ -327,12 +330,13 @@
 			files = (
 				F44A77F21EF84E6900046915 /* TrailerDefectTableViewController.xib in Resources */,
 				F43ACAD11EDC30CE00F96397 /* LaunchScreen.storyboard in Resources */,
-				F43ACACE1EDC30CE00F96397 /* Assets.xcassets in Resources */,
+				F43ACACE1EDC30CE00F96397 /* Images.xcassets in Resources */,
 				F43ACB071EDCA99800F96397 /* View3.xib in Resources */,
 				F44A77EE1EF847E700046915 /* TruckDefectTableViewController.xib in Resources */,
 				F43DA3131EF0042800167575 /* checkbox-unchecked.png in Resources */,
 				F43ACB031EDCA95800F96397 /* View2.xib in Resources */,
 				F43ACAC91EDC30CE00F96397 /* Main.storyboard in Resources */,
+				F41D0E041F02CD1D0047DAD5 /* ETruckPlist.plist in Resources */,
 				E0282A9E1EEBC1E8007CF1AF /* View1.xib in Resources */,
 				E0282A9B1EEBC1E8007CF1AF /* CustomTruckDefectsTableViewCell.xib in Resources */,
 				F43DA3151EF0043200167575 /* checkBox-Checked.png in Resources */,

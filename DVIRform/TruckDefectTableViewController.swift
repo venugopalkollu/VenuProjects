@@ -25,6 +25,15 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
             self.tableView?.register(UINib(nibName:"CustomTruckDefectsTableViewCell",bundle:nil),forCellReuseIdentifier:"TruckDefectsCell");
             tableView.dataSource = self
             tableView.delegate = self
+        
+/*
+        let path = Bundle.main.path(forResource: "ETruckPlist", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        
+        truckDefects = dict!.object(forKey: "TruckDefects") as! [String] as! NSMutableArray
+*/        
+        
+        
         self.navigationController?.navigationBar.isTranslucent = false;
         
         let rightButton  = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
