@@ -15,31 +15,32 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
     var selectedIndexArray: NSMutableArray = []
     var truckComments = NSMutableDictionary()
     var complertionHandler:((_ valuesDict:NSMutableDictionary,_ comments:NSMutableDictionary) -> Void)?
-
+    var plistDict:NSDictionary?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self;
         
-        truckDefects = ["Air Compressor", "Air Lines", "Audio/Visual Equimpent", "Battery", "Belts & Hoses", "Body", "Brake Accessories", "Cleanliness of Interor", "Clutch", "Condition of Floor", "Defroster", "Directional Lights", "Drivers Seat & Belt", "Emergency Door & Buzzer", "Emergency Equipment", "Engine", "Entrance Steps", "Exhaust ", "Fire Extinguisher", "First Aid Kit", "Fluid Levels", "Gauges & Warning Lights", "HeadLights", "Heater", "Horn", "Hose Connections", "Mirrors", "Muffler", "Oil Level", "Parking Brakes", "Power Steering", "Radiator Level", "Safety Equipment", "Service Brakes", "Service Door", "Starter", "Steering", "Suspension System", "Stop Arm","Switches", "Tail Lights", "Tail Pipe", "Tires", "Transmission", "Turn Indicators", "Wheelchair Lift", "Wheels & Rims", "Windows", "Windshield", "Wipers & Washers", "Other"]
-            
-            self.tableView?.register(UINib(nibName:"CustomTruckDefectsTableViewCell",bundle:nil),forCellReuseIdentifier:"TruckDefectsCell");
-            tableView.dataSource = self
-            tableView.delegate = self
+        //Reading Plist
         
-/*
         let path = Bundle.main.path(forResource: "ETruckPlist", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
         
-        truckDefects = dict!.object(forKey: "TruckDefects") as! [String] as! NSMutableArray
-*/        
+        plistDict = dict!.object(forKey: "TruckDefects") as? NSDictionary
+        truckDefects = plistDict?.allKeys as! NSMutableArray
         
+        truckDefects = truckDefects.sorted { ($0 as! String).localizedCaseInsensitiveCompare($1 as! String) == ComparisonResult.orderedAscending } as! NSMutableArray
+        
+        self.tableView?.register(UINib(nibName:"CustomTruckDefectsTableViewCell",bundle:nil),forCellReuseIdentifier:"TruckDefectsCell");
+        tableView.dataSource = self
+        tableView.delegate = self
         
         self.navigationController?.navigationBar.isTranslucent = false;
         
         let rightButton  = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
         self.navigationItem.rightBarButtonItem = rightButton
         registerKeyboardNotifications()
-            }
+    }
     
     func rightButtonTapped(sender: UIBarButtonItem){
         let tempArray = NSMutableArray()
@@ -56,27 +57,27 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
         print("Done Button Clicked")
         
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
         // #warning Incomplete implementation, return the number of rows
         return truckDefects.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TruckDefectsCell", for: indexPath) as! CustomTruckDefectsTableViewCell
         cell.checkBoxDelegate = self
@@ -100,7 +101,7 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
         let defects = truckDefects[indexPath.row]
         return cell;
     }
-
+    
     func isCheckBoxSelected(index:Int){
         if(selectedIndexArray.contains(index)){
             self.selectedIndexArray.remove(index)
@@ -126,11 +127,13 @@ class TruckDefectTableViewController: UITableViewController,CheckBoxSelectded,UI
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("venu")
+
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         truckComments.setObject(textField.text!, forKey: textField.tag as NSCopying)
-
+        
     }
     
     

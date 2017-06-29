@@ -13,24 +13,28 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
     var trailerDefects :NSMutableArray = []
     var selectedIndexArrayForTrailer: NSMutableArray = []
     var trailerComments = NSMutableDictionary()
+    var plistDict:NSDictionary?
 
     var complertionHandler:((_ valuesDict:NSMutableDictionary,_ comments:NSMutableDictionary) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
  self.tableView.delegate = self
-        trailerDefects = ["Brake Connections", "Brakes", "Coupling Devices", "Coupling Pin", "Doors", "Hitch", "Landing Gear", "Lights", "Reflectors", "Roof", "Straps", "Suspection System", "Tarpaulin", "Tires", "Wheels & Rims", "Other"]
+    // Reading Plist
+        let path = Bundle.main.path(forResource: "ETruckPlist", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
         
+        plistDict = dict!.object(forKey: "TrailerDefects") as! NSDictionary
+        trailerDefects = plistDict?.allKeys as! NSMutableArray
+        
+        trailerDefects = trailerDefects.sorted { ($0 as! String).localizedCaseInsensitiveCompare($1 as! String) == ComparisonResult.orderedAscending } as!NSMutableArray
         self.tableView?.register(UINib(nibName:"CustomTrailerDefectsTableViewCell",bundle:nil),forCellReuseIdentifier:"TrailerDefectsCell");
         tableView.dataSource = self
         tableView.delegate = self
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         let rightButton  = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rightButtonTapped(sender:)))
         self.navigationItem.rightBarButtonItem = rightButton
+//        registerKeyboardNotifications();
     }
     
     func rightButtonTapped(sender: UIBarButtonItem){
@@ -114,7 +118,7 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("chinna")
+        print("venu")
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         trailerComments.setObject(textField.text!, forKey: textField.tag as NSCopying)
@@ -122,60 +126,44 @@ class TrailerDefectTableViewController: UITableViewController,TrailerCheckBoxSel
     }
 
     
-}
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    
+    func keyboardDidShow(notification: NSNotification)
+    {
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.tableView.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.tableView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 10;
+        self.tableView.contentInset = contentInset
+        //if let userInfo = notification.userInfo
+    }
+    
+    /**
+     This method is fired when the keyboard is hidden.
+     */
+    func keyboardWillHide(notification: NSNotification){
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        self.tableView.contentInset = contentInset
+    }
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(TruckDefectTableViewController.keyboardDidShow(notification:)),
+                                               name: NSNotification.Name.UIKeyboardDidShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(TruckDefectTableViewController.keyboardWillHide(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
 
+    
+}
+   

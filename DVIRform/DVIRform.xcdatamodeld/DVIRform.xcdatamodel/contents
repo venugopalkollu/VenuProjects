@@ -69,6 +69,6 @@
         <element name="DvirTrailerDefectMapping" positionX="-9" positionY="300" width="128" height="225"/>
         <element name="DvirTruckDefectMapping" positionX="-200" positionY="273" width="128" height="225"/>
         <element name="TrailerDefect" positionX="-38" positionY="-24" width="128" height="135"/>
-        <element name="TruckDefect" positionX="-234" positionY="-6" width="128" height="135"/>
+        <element name="TruckDefect" positionX="-216" positionY="18" width="128" height="133"/>
     </elements>
 </model>

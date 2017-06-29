@@ -13,10 +13,10 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
     
     @IBAction func getDataForDate(_ sender: Any) {
         dateSelected = "2017-05-26"
-       getDataFromView(selectedIndex: 1, date:"2017-05-26")
+        getDataFromView(selectedIndex: 1, date:"2017-05-26")
         getDataFromView(selectedIndex: 2, date:"2017-05-26")
- 
-       
+        
+        
         
     }
     
@@ -24,8 +24,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         dateSelected = "2017-06-28"
         getDataFromView(selectedIndex:1, date:"2017-06-28")
         getDataFromView(selectedIndex:2, date:"2017-06-28")
-
-
+        
+        
     }
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -173,7 +173,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         if let dvir = dvir{
             
         }else{
-            dvir = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext!) as! Dvir
+            dvir = NSEntityDescription.insertNewObject(forEntityName: "Dvir", into: managedObjectContext!) as? Dvir
         }
         
         
@@ -221,25 +221,25 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
             
         }
         else if(selectedIndex == 2){
-           
+            
             
             dvir?.truckNumber = view2?.txtTruckNumber.text
             dvir?.trailerNumber = view2?.txtTrailerNumber.text
             
-// mapping truckDefects with dvir
+            // mapping truckDefects with dvir
             
             let keys = self.truckValuesDict.allKeys
             for tempKey in keys{
-                let truckdefects = NSEntityDescription.insertNewObject(forEntityName: "TruckDefect", into: managedObjectContext!) as! TruckDefect
+      /*          let truckdefects = NSEntityDescription.insertNewObject(forEntityName: "TruckDefect", into: managedObjectContext!) as! TruckDefect
                 let value = self.truckValuesDict.object(forKey: tempKey);
                 
                 truckdefects.id = Int16(tempKey as! Int)
                 truckdefects.name = value as! String
-                
+        */
                 let truckComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTruckDefectMapping", into: managedObjectContext!) as! DvirTruckDefectMapping
                 truckComments.comment = self.truckCommentsDict.object(forKey: tempKey) as! String
                 truckComments.truckId = Int16(tempKey as! Int)
-            
+                
                 
                 
                 do{
@@ -254,18 +254,18 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                 
             }
             
-// mapping trailerDefects with dvir
+            // mapping trailerDefects with dvir
             
             let key = self.trailerValuesDict.allKeys
             for tempKey in key{
-                let trailerdefects = NSEntityDescription.insertNewObject(forEntityName: "TrailerDefect", into: managedObjectContext!) as! TrailerDefect
+      /*          let trailerdefects = NSEntityDescription.insertNewObject(forEntityName: "TrailerDefect", into: managedObjectContext!) as! TrailerDefect
                 let value = self.trailerValuesDict.object(forKey: tempKey);
                 
                 trailerdefects.id = Int16(tempKey as! Int)
-                trailerdefects.name = value as! String
-                
+                trailerdefects.name = value as? String
+    */            
                 let trailerComments = NSEntityDescription.insertNewObject(forEntityName: "DvirTrailerDefectMapping", into: managedObjectContext!) as! DvirTrailerDefectMapping
-                trailerComments.comment = self.trailerCommentsDict.object(forKey: tempKey) as! String
+                trailerComments.comment = self.trailerCommentsDict.object(forKey: tempKey) as? String
                 trailerComments.trailerDefectId = Int16(tempKey as! Int)
                 
                 
@@ -346,6 +346,8 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                 
                 if dvirItems.count > 0{
                     displayDataForTheDateSelected(selectedIndex: 1, dvirItems: dvirItems)
+                    displayDataForTheDateSelected(selectedIndex: 2, dvirItems: dvirItems)
+
                 }else{
                     isDataExistForTheDate = false;
                     clearExistingDataWhenAnotherDateSelected(dvirItems: [])
@@ -418,14 +420,15 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                 view2?.txtTruckNumber.text = obj2.truckNumber;
                 view2?.txtTrailerNumber.text = obj2.trailerNumber;
                 
-               let obj3 = dvirItems.object(at: 0) as! TruckDefect
-                view2?.txtAddRemoveTruckDefects.text = obj3.name;
-                
-                let obj4 = dvirItems.object(at: 0) as! TrailerDefect
-                view2?.txtAddRemoveTrailerDefects.text = obj4.name;
-                
-               let obj5 = dvirItems.object(at: 0) as! DvirTruckDefectMapping
-  
+                /*
+                 let obj3 = dvirItems.object(at: 0) as! TruckDefect
+                 view2?.txtAddRemoveTruckDefects.text = obj3.name;
+                 
+                 let obj4 = dvirItems.object(at: 0) as! TrailerDefect
+                 view2?.txtAddRemoveTrailerDefects.text = obj4.name;
+                 
+                 let obj5 = dvirItems.object(at: 0) as! DvirTruckDefectMapping
+                 */
             }
             
         }
@@ -436,33 +439,33 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
         
     }
     
- /*
-    func updateCoreDataValues(selectedIndex:Int){
-        if (selectedIndex == 1 ){
-            if dvirItems.count>0{
-                let obj1 = dvirItems.object(at: 0) as! Dvir
-                obj1.carrier = view1?.txtCarrier.text
-                obj1.location = view1?.txtLocation.text
-                obj1.odometer = Int16((view1?.txtOdometer.text!)!)!
-                do{
-                    try obj1.managedObjectContext?.save()
-                    print("venu", dvirItems.count)
-                }
-                    
-                catch{
-                    print("Failed to retrieve record")
-                }
-            }
-            
-        }
-        else if(selectedIndex == 2){
-            
-        }
-        else if(selectedIndex == 3){
-            
-        }
-    }
-*/
+    /*
+     func updateCoreDataValues(selectedIndex:Int){
+     if (selectedIndex == 1 ){
+     if dvirItems.count>0{
+     let obj1 = dvirItems.object(at: 0) as! Dvir
+     obj1.carrier = view1?.txtCarrier.text
+     obj1.location = view1?.txtLocation.text
+     obj1.odometer = Int16((view1?.txtOdometer.text!)!)!
+     do{
+     try obj1.managedObjectContext?.save()
+     print("venu", dvirItems.count)
+     }
+     
+     catch{
+     print("Failed to retrieve record")
+     }
+     }
+     
+     }
+     else if(selectedIndex == 2){
+     
+     }
+     else if(selectedIndex == 3){
+     
+     }
+     }
+     */
     func clearExistingDataWhenAnotherDateSelected(dvirItems:NSArray){
         for case let textField as UITextField in self.dvirView.subviews {
             textField.text = ""
@@ -516,7 +519,7 @@ class ViewController: UIViewController, UIScrollViewDelegate,DefectsTableView,An
                                                name: NSNotification.Name.UIKeyboardWillHide,
                                                object: nil)
     }
-
+    
     
 }
 
